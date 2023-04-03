@@ -1,0 +1,58 @@
+﻿@{
+	Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
+	<!-- Favicon icon -->
+	<link rel="icon" type="image/png" sizes="16x16" href="~/adminweb/images/favicon.png">
+	<!-- Custom Stylesheet -->
+	<link href="~/adminweb/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<partial name="/Views/AdminLayout/PreloaderPartial.cshtml" />
+	
+	<div id="main-wrapper">
+		
+		<partial name="/Views/AdminLayout/NavPartial.cshtml" />
+
+		<partial name="/Views/AdminLayout/HeaderPartial.cshtml" />
+	
+		<partial name="/Views/AdminLayout/SidebarPartial.cshtml" />
+
+		<div class="content-body">
+
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-12">
+						<div class="card">
+							<div class="card-body">
+								<p>
+									@RenderBody();
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- #/ container -->
+		</div>
+		
+		<partial name="/Views/AdminLayout/FooterPartial.cshtml" />
+		
+	</div>
+
+	<partial name="/Views/AdminLayout/ScriptPartial.cshtml" />
+
+
+</body>
+
+</html>
