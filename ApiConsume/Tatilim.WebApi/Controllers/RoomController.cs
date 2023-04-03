@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Tatilim.BusinessLayer.Abstract;
+using Tatilim.EntityLayer.Concrete;
 
 namespace Tatilim.WebApi.Controllers
 {
@@ -7,32 +9,45 @@ namespace Tatilim.WebApi.Controllers
     [ApiController]
     public class RoomController : ControllerBase
     {
+        private readonly IRoomService _roomService;
+
+        public RoomController(IRoomService roomService)
+        {
+            _roomService = roomService;
+        }
+
         [HttpGet]
         public IActionResult RoomList()
         {
-            return Ok();
+            var values = _roomService.TGetList();
+            return Ok(values);
         }
         [HttpPost]
-        public IActionResult AddRoom()
+        public IActionResult AddRoom(Room model)
         {
+            _roomService.TInsert(model);
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteRoom()
+        public IActionResult DeleteRoom(int id)
         {
+            var values = _roomService.TGetByID(id);
+
+            _roomService.TDelete(values);
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateRoom()
+        public IActionResult UpdateRoom(Room model)
         {
-            return Ok();
+            _roomService.TUpdate(model);
+            return Ok(model);
         }
         [HttpGet("{id}")]
-        public IActionResult GetRoom()
+        public IActionResult GetRoom(int id)
         {
-            return Ok();
+            var values = _roomService.TGetByID(id);
+            return Ok(values);
         }
-
 
     }
 }

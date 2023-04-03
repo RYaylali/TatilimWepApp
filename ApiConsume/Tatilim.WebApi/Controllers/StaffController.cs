@@ -23,25 +23,30 @@ namespace Tatilim.WebApi.Controllers
             return Ok(values);
         }
         [HttpPost]
-        public IActionResult AddStaff(Staff staff)
+        public IActionResult AddStaff(Staff model)
         {
-            _staffService.TInsert(staff);
-            return Ok(staff);
+            _staffService.TInsert(model);
+            return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteStaff()
+        public IActionResult DeleteStaff(int id)
         {
+            var values = _staffService.TGetByID(id);
+
+            _staffService.TDelete(values);
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateStaff()
+        public IActionResult UpdateStaff(Staff model)
         {
-            return Ok();
+            _staffService.TUpdate(model);
+            return Ok(model);
         }
         [HttpGet("{id}")]
-        public IActionResult GetStaff()
+        public IActionResult GetStaff(int id)
         {
-            return Ok();
+            var values = _staffService.TGetByID(id);
+            return Ok(values);
         }
 
     }

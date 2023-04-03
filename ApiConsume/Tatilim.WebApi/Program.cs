@@ -22,6 +22,21 @@ namespace Tatilim.WebApi
             builder.Services.AddScoped<IStaffDal, EfStaffDal>();
             builder.Services.AddScoped<IStaffService, StaffManager>();
 
+            builder.Services.AddScoped<IServicesDal, EfServicesDal>();
+            builder.Services.AddScoped<IServiceService, ServiceManager>();
+
+            builder.Services.AddScoped<IRoomDal, EfRoomDal>();
+            builder.Services.AddScoped<IRoomService, RoomManager>();
+
+            builder.Services.AddScoped<ISubscribleDal, EfSubscribeDal>();
+            builder.Services.AddScoped<ISubscribleService, SubscribleManager>();
+
+            builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
+            builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+
+            builder.Services.AddScoped<IStaffDal, EfStaffDal>();
+            builder.Services.AddScoped<IStaffService, StaffManager>();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
