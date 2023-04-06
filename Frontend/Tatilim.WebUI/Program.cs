@@ -1,3 +1,6 @@
+using Tatilim.DataAccessLayer.Concrete;
+using Tatilim.EntityLayer.Concrete;
+
 namespace Tatilim.WebUI
 {
     public class Program
@@ -5,6 +8,8 @@ namespace Tatilim.WebUI
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+            builder.Services.AddDbContext<Context>();
+            builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();//identity class larýný contexte baðlamak için
             builder.Services.AddHttpClient();
 			// Add services to the container.
 			builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
