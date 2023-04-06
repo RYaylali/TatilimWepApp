@@ -22,7 +22,7 @@ namespace Tatilim.WebUI.Controllers
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
-				var values = JsonConvert.DeserializeObject<List<StaffViewModel>>(jsonData);
+				var values = JsonConvert.DeserializeObject<List<TestimonialVM>>(jsonData);
 				return View(values);
 			}
 			return View();
