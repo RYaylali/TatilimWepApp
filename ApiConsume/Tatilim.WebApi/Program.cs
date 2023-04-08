@@ -36,8 +36,10 @@ namespace Tatilim.WebApi
             builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
             builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
 
-            builder.Services.AddScoped<IStaffDal, EfStaffDal>();
-            builder.Services.AddScoped<IStaffService, StaffManager>();
+
+            builder.Services.AddScoped<IAboutService, AboutManager>();
+            builder.Services.AddScoped<IAboutDal, EfAboutDal>();
+
 
             builder.Services.AddAutoMapper(typeof(Program));
             builder.Services.AddCors(opt =>
