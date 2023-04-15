@@ -5,6 +5,9 @@ using Tatilim.WebUI.Dtos.LoginDto;
 using Tatilim.WebUI.Dtos.RegisterDto;
 using Tatilim.WebUI.Dtos.RoomDto;
 using Tatilim.WebUI.Dtos.ServiceDto;
+using Tatilim.WebUI.Dtos.StaffDto;
+using Tatilim.WebUI.Dtos.SubscripleDto;
+using Tatilim.WebUI.Dtos.TestimonialDto;
 
 namespace Tatilim.WebUI.Mapping
 {
@@ -23,6 +26,12 @@ namespace Tatilim.WebUI.Mapping
             CreateMap<UpdateAboutDto, About>().ReverseMap();
 
             CreateMap<ResultRoomDto, Room>().ReverseMap();
+
+            CreateMap<ResultTestimonialDto, Testimonial>().ReverseMap();
+
+            CreateMap<ResultStaffDto, Staff>().ReverseMap();
+
+            CreateMap<CreateSubscripleDto, Subscribe>().ReverseMap();
         }
     }
 }

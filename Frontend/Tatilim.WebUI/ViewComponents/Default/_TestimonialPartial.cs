@@ -1,11 +1,28 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Tatilim.WebUI.Dtos.ServiceDto;
+using Tatilim.WebUI.Dtos.TestimonialDto;
 
 namespace Tatilim.WebUI.ViewComponents.Default
 {
     public class _TestimonialPartial :ViewComponent
     {
-        public IViewComponentResult Invoke()
+        private readonly IHttpClientFactory _httpClientFactory;
+
+        public _TestimonialPartial(IHttpClientFactory httpClientFactory)
         {
+            _httpClientFactory = httpClientFactory;
+        }
+        public async Task<IViewComponentResult> InvokeAsync()
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responseMessage = await client.GetAsync("http://localhost:5200/api/Testimonial");
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
+                var values = JsonConvert.DeserializeObject<List<ResultTestimonialDto>>(jsonData);
+                return View(values);
+            }
             return View();
         }
     }
