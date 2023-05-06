@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Tatilim.EntityLayer.Concrete;
 using Tatilim.WebUI.Dtos.AboutDto;
+using Tatilim.WebUI.Dtos.BookingDto;
 using Tatilim.WebUI.Dtos.LoginDto;
 using Tatilim.WebUI.Dtos.RegisterDto;
 using Tatilim.WebUI.Dtos.RoomDto;
@@ -32,6 +33,8 @@ namespace Tatilim.WebUI.Mapping
             CreateMap<ResultStaffDto, Staff>().ReverseMap();
 
             CreateMap<CreateSubscripleDto, Subscribe>().ReverseMap();
+
+            CreateMap<CreateBookingDto, Booking>().ReverseMap();
         }
     }
 }
