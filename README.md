@@ -6,3 +6,4 @@
 + Identity Kütüphanesi
 + AutoMapper
 + Rapid Api
++ Json Web Token
