@@ -1,0 +1,23 @@
+﻿@model List<ExchangeVM.Exchange_Rates>
+@{
+    ViewData["Title"] = "Index";
+}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<div class="container">
+    <br />
+    <br />
+    <table class="table table-bordered">
+        <tr>
+            
+            <th>Kur İsmi</th>
+            <th>Kur Fiyatı</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.currency</td>
+                <td>@item.exchange_rate_buy</td>
+            </tr>
+        }
+    </table>
+</div>
