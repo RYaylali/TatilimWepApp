@@ -18,7 +18,17 @@ namespace Tatilim.BusinessLayer.Concrete
             _bookingDal = bookingDal;
         }
 
-        public void TDelete(Booking entity)
+		public void TBookingStatusChangeApproved(Booking booking)
+		{
+			_bookingDal.BookingStatusChangeApproved(booking);
+		}
+
+		public void TBookingStatusChangeApproved(int id)
+		{
+			_bookingDal.BookingStatusChangeApproved(id);
+		}
+
+		public void TDelete(Booking entity)
         {
             _bookingDal.Delete(entity);
         }

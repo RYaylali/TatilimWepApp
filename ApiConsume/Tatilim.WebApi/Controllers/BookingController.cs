@@ -46,17 +46,17 @@ namespace Tatilim.WebApi.Controllers
 			var values = _bookingService.TGetByID(id);
 			return Ok(values);
 		}
-		//[HttpPut("aaaaa")]
-		//public IActionResult aaaaa(Booking booking)
-		//{
-		//	_bookingService.TBookingStatusChangeApproved(booking);
-		//	return Ok();
-		//}
-		//[HttpPut("bbbb")]
-		//public IActionResult bbbb(int id)
-		//{
-		//	_bookingService.TBookingStatusChangeApproved2(id);
-		//	return Ok();
-		//}
+		[HttpPut("aaaaa")]
+		public IActionResult aaaaa(Booking booking)
+		{
+			_bookingService.TBookingStatusChangeApproved(booking);
+			return Ok();
+		}
+		[HttpPut("bbbb/{id}")]
+		public IActionResult bbbb(int id)
+		{
+			_bookingService.TBookingStatusChangeApproved(id);
+			return Ok();
+		}
 	}
 }

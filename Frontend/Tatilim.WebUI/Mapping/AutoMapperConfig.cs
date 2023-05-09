@@ -35,6 +35,7 @@ namespace Tatilim.WebUI.Mapping
             CreateMap<CreateSubscripleDto, Subscribe>().ReverseMap();
 
             CreateMap<CreateBookingDto, Booking>().ReverseMap();
+            CreateMap<ApprovedReservationDto, Booking>().ReverseMap();
         }
     }
 }

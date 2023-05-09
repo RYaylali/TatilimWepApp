@@ -9,5 +9,8 @@ namespace Tatilim.BusinessLayer.Abstract
 {
     public interface IBookingService : IGenericService<Booking>
     {
-    }
+        void TBookingStatusChangeApproved(Booking booking);
+        void TBookingStatusChangeApproved(int id);
+
+	}
 }
