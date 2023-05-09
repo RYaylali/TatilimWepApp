@@ -1,2 +1,8 @@
 # TatilimWepApp
-Api and MVC
++ Asp .NET Core
++ Entity framework Core
++ Api
++ Mvc
++ Identity Kütüphanesi
++ AutoMapper
++ Rapid Api
