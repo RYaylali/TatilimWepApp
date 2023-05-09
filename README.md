@@ -5,3 +5,4 @@
 + Mvc
 + Identity Kütüphanesi
 + AutoMapper
++ Rapid Api
