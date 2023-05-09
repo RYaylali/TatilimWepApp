@@ -1,5 +1,5 @@
 # TatilimWepApp
-+ Asp .NET Core
++ Asp .NET Core 6.0
 + Entity framework Core
 + Api
 + Mvc
