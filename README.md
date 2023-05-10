@@ -7,5 +7,5 @@
 + AutoMapper
 + Rapid Api
 + Json Web Token
-+ Triger
++ Triggers
 
