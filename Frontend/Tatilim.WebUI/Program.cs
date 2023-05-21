@@ -1,5 +1,9 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Tatilim.DataAccessLayer.Concrete;
 using Tatilim.EntityLayer.Concrete;
+using Tatilim.WebUI.Dtos.GuestDto;
+using Tatilim.WebUI.ValidationRules.GuestValidationRules;
 
 namespace Tatilim.WebUI
 {
@@ -11,8 +15,9 @@ namespace Tatilim.WebUI
             builder.Services.AddDbContext<Context>();
             builder.Services.AddIdentity<AppUser,AppRole>().AddEntityFrameworkStores<Context>();//identity class larýný contexte baðlamak için
             builder.Services.AddHttpClient();
-			// Add services to the container.
-			builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            // Add services to the container.
+            builder.Services.AddTransient<IValidator<CreateGuestDto>,CreateGuestValidator>();//Validation kontrolün yapmasý gereken yeri belirler.Bir tane örnek yazmak yeterli
+			builder.Services.AddControllersWithViews().AddRazorRuntimeCompilation().AddFluentValidation();//Razor cshtml tarafýnda deðiþiklik yapýldýðýnda tekrar projeyi kaldýrmadan görmeye yarar. Fluentvalidation þartlarý saðlayýp saðlamadýðýna bakar
             builder.Services.AddAutoMapper(typeof(Program));
 			var app = builder.Build();
 
