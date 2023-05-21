@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Tatilim.BusinessLayer.Abstract;
 using Tatilim.EntityLayer.Concrete;

@@ -30,4 +30,8 @@
     <ProjectReference Include="..\..\ApiConsume\Tatilim.EntityLayer\Tatilim.EntityLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Dtos\ContactDto\" />
+  </ItemGroup>
+
 </Project>

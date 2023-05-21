@@ -43,7 +43,12 @@ namespace Tatilim.WebApi
             builder.Services.AddScoped<IBookingService, BookingManager>();
             builder.Services.AddScoped<IBookingDal, EfBookingDal>();
 
+			builder.Services.AddScoped<IContactService, ContactManager>();
+			builder.Services.AddScoped<IContactDal, EfContactDal>();
 
+
+            builder.Services.AddScoped<IGuestService, GuestManager>();
+            builder.Services.AddScoped<IGuestDal, EFGuestDal>();
             builder.Services.AddAutoMapper(typeof(Program));
             builder.Services.AddCors(opt =>
             {
