@@ -8,4 +8,5 @@
 + Rapid Api
 + Json Web Token
 + Triggers
++ Fluentvalidation
 
