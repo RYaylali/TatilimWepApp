@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Tatilim.BusinessLayer.Abstract;
+﻿using Tatilim.BusinessLayer.Abstract;
 using Tatilim.DataAccessLayer.Abstract;
 using Tatilim.EntityLayer.Concrete;
 
 namespace Tatilim.BusinessLayer.Concrete
 {
-    public class RoomManager : IRoomService
+	public class RoomManager : IRoomService
     {
         private readonly IRoomDal _roomDal;
 

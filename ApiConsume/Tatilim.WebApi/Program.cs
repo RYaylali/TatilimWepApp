@@ -49,7 +49,11 @@ namespace Tatilim.WebApi
 
             builder.Services.AddScoped<IGuestService, GuestManager>();
             builder.Services.AddScoped<IGuestDal, EFGuestDal>();
-            builder.Services.AddAutoMapper(typeof(Program));
+
+			builder.Services.AddScoped<ISendMessageDal, EFSendMessageDal>();
+			builder.Services.AddScoped<ISendMessageService, SendMessageManager>();
+
+			builder.Services.AddAutoMapper(typeof(Program));
             builder.Services.AddCors(opt =>
             {
                 opt.AddPolicy("TatilimApiCors", opt =>

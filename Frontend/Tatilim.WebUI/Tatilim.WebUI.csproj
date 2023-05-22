@@ -33,7 +33,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Dtos\ContactDto\" />
     <Folder Include="ValidationRules\RoomValidationRules\" />
   </ItemGroup>
 

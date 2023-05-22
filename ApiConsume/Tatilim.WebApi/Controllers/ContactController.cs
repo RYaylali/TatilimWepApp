@@ -17,7 +17,7 @@ namespace Tatilim.WebApi.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult ContactList()
+		public IActionResult InboxListContact()
 		{
 			var values = _contactService.TGetList();
 			return Ok(values);
@@ -44,7 +44,7 @@ namespace Tatilim.WebApi.Controllers
 			return Ok(model);
 		}
 		[HttpGet("{id}")]
-		public IActionResult GetContact(int id)
+		public IActionResult GetSendMessage(int id)
 		{
 			var values = _contactService.TGetByID(id);
 			return Ok(values);

@@ -44,6 +44,7 @@ namespace Tatilim.WebUI.Mapping
             CreateMap<UpdateAboutDto, About>().ReverseMap();
 
             CreateMap<CreateGuestDto, Guest>().ReverseMap();
+            CreateMap<InboxContactDto, Guest>().ReverseMap();
         }
     }
 }
