@@ -1,12 +1,14 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Tatilim.EntityLayer.Concrete;
 using Tatilim.WebUI.Dtos.RegisterDto;
 
 namespace Tatilim.WebUI.Controllers
 {
+	[AllowAnonymous]
     public class RegisterController : Controller
-    {
+	{
         private readonly UserManager<AppUser> _userManager;
 
         public RegisterController(UserManager<AppUser> userManager)

@@ -6,6 +6,7 @@ using Tatilim.WebUI.Dtos.BookingDto;
 
 namespace Tatilim.WebUI.Controllers
 {
+	[AllowAnonymous]
 	public class BookingController : Controller
 	{
 		private readonly IHttpClientFactory _httpClientFactory;

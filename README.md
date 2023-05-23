@@ -10,3 +10,5 @@
 + Triggers
 + Fluentvalidation
 + Mail Gönderme işlemi
++ Dosya ve Fotoğraf Yükleme İşlemi
++ Authorize ve AllowAnonymous (Yetkilendirme)

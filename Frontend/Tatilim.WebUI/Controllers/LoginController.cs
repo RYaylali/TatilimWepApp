@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Tatilim.EntityLayer.Concrete;
 using Tatilim.WebUI.Dtos.LoginDto;
 
 namespace Tatilim.WebUI.Controllers
 {
+	[AllowAnonymous]//Yetkisiz girilebilir
 	public class LoginController : Controller
 	{
 		private readonly SignInManager<AppUser> _signInManager;
