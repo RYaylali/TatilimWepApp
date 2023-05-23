@@ -9,4 +9,4 @@
 + Json Web Token
 + Triggers
 + Fluentvalidation
-
++ Mail Gönderme işlemi
