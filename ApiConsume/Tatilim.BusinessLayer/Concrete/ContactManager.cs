@@ -29,7 +29,12 @@ namespace Tatilim.BusinessLayer.Concrete
 			return _contactDal.GetByID(id);
 		}
 
-		public List<Contact> TGetList()
+        public int TGetContactCount()
+        {
+           return _contactDal.GetContactCount();	
+        }
+
+        public List<Contact> TGetList()
 		{
 			return _contactDal.GetList();
 		}

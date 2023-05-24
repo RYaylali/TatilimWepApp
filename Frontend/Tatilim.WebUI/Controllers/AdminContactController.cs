@@ -20,10 +20,17 @@ namespace Tatilim.WebUI.Controllers
         {
             var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("http://localhost:5200/api/Contact");
+            var responseMessageContactCount = await client.GetAsync("http://localhost:5200/api/Contact/GetContactCount");
+            var responseMessageSendMessageCount = await client.GetAsync("http://localhost:5200/api/SendMessage/GetSendMessageCount");
+
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<InboxContactDto>>(jsonData);
+                var jsonDataContactCount = await responseMessageContactCount.Content.ReadAsStringAsync();
+                var jsonDataSendMessageCount = await responseMessageSendMessageCount.Content.ReadAsStringAsync();
+                ViewBag.contactCount = jsonDataContactCount;
+                ViewBag.sendMessageCount = jsonDataSendMessageCount;
                 return View(values);
             }
             return View();
@@ -87,7 +94,20 @@ namespace Tatilim.WebUI.Controllers
 			}
 			return View();
 		}
-		public PartialViewResult SideBarAdminContactPartial()
+
+        //public async Task<IActionResult> GetContactCount()
+        //{
+        //    var client = _httpClientFactory.CreateClient();
+        //    var responseMessage = await client.GetAsync("http://localhost:5200/api/Contact/GetContactCount");
+        //    if (responseMessage.IsSuccessStatusCode)
+        //    {
+        //        var jsonData = await responseMessage.Content.ReadAsStringAsync();
+        //        ViewBag.data = jsonData;
+        //        return View();
+        //    }
+        //    return View();
+        //}
+        public PartialViewResult SideBarAdminContactPartial()
         {
             return PartialView();
         }

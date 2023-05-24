@@ -9,5 +9,6 @@ namespace Tatilim.DataAccessLayer.Abstract
 {
 	public interface IContactDal :IGenericDal<Contact>
 	{
+		 int GetContactCount();
 	}
 }

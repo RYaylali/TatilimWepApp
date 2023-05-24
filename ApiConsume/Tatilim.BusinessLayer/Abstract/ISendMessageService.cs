@@ -9,5 +9,6 @@ namespace Tatilim.BusinessLayer.Abstract
 {
 	public interface ISendMessageService :IGenericService<SendMessage>
 	{
+		public int TSendMessageCount();
 	}
 }

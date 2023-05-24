@@ -38,7 +38,12 @@ namespace Tatilim.BusinessLayer.Concrete
 			_sendMessage.Insert(entity);
 		}
 
-		public void TUpdate(SendMessage entity)
+        public int TSendMessageCount()
+        {
+           return _sendMessage.SendMessageCount();
+        }
+
+        public void TUpdate(SendMessage entity)
 		{
 			_sendMessage.Update(entity);
 		}

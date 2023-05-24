@@ -10,10 +10,17 @@ using Tatilim.EntityLayer.Concrete;
 
 namespace Tatilim.DataAccessLayer.EntityFramework
 {
-	public class EFSendMessageDal : GenericRepository<SendMessage>, ISendMessageDal
-	{
-		public EFSendMessageDal(Context context) : base(context)
-		{
-		}
-	}
+    public class EFSendMessageDal : GenericRepository<SendMessage>, ISendMessageDal
+    {
+        public EFSendMessageDal(Context context) : base(context)
+        {
+        }
+
+        public int SendMessageCount()
+        {
+            var context = new Context();
+            var value = context.SendMessages.Count();
+            return value;
+        }
+    }
 }

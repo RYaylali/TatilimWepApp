@@ -48,6 +48,11 @@ namespace Tatilim.WebApi.Controllers
 			var values = _sendMessageService.TGetByID(id);
 			return Ok(values);
 		}
+        [HttpGet("GetSendMessageCount")]
+        public IActionResult GetContactCount()
+        {
+            return Ok(_sendMessageService.TSendMessageCount());
+        }
 
-	}
+    }
 }
