@@ -22,13 +22,13 @@ namespace Tatilim.WebApi.Controllers
 			var values = _contactService.TGetList();
 			return Ok(values);
 		}
-		[HttpPost]
-		public IActionResult AddContact(Contact model)
-		{
-			model.Date=Convert.ToDateTime(DateTime.Now.ToString());
-			_contactService.TInsert(model);
-			return Ok();
-		}
+	 [HttpPost("PostContact")]
+        public IActionResult AddContact(Contact contact)
+        {
+            contact.Date = Convert.ToDateTime(DateTime.Now.ToString());
+            _contactService.TInsert(contact);
+            return Ok();
+        }
 		[HttpDelete("{id}")]
 		public IActionResult DeleteContact(int id)
 		{

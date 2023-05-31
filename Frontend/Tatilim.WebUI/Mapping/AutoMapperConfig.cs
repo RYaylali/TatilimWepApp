@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Tatilim.EntityLayer.Concrete;
 using Tatilim.WebUI.Dtos.AboutDto;
+using Tatilim.WebUI.Dtos.AppUserDto;
 using Tatilim.WebUI.Dtos.BookingDto;
 using Tatilim.WebUI.Dtos.ContactDto;
 using Tatilim.WebUI.Dtos.GuestDto;
@@ -45,6 +46,8 @@ namespace Tatilim.WebUI.Mapping
 
             CreateMap<CreateGuestDto, Guest>().ReverseMap();
             CreateMap<InboxContactDto, Guest>().ReverseMap();
+
+            CreateMap<ResultAppUserDto, AppUser>().ReverseMap();
         }
     }
 }

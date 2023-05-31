@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tatilim.DataAccessLayer.Concrete;
 
@@ -11,9 +12,10 @@ using Tatilim.DataAccessLayer.Concrete;
 namespace Tatilim.DataAccessLayer.Migrations
 {
     [DbContext(typeof(Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    [Migration("20230524135100_add_messagecategory")]
+    partial class add_messagecategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -207,21 +209,12 @@ namespace Tatilim.DataAccessLayer.Migrations
                         .IsConcurrencyToken()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Country")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("Gender")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("ImageUrl")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -264,12 +257,6 @@ namespace Tatilim.DataAccessLayer.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("nvarchar(256)");
 
-                    b.Property<string>("WorkDepartment")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("WorkLocationID")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -279,8 +266,6 @@ namespace Tatilim.DataAccessLayer.Migrations
                         .IsUnique()
                         .HasDatabaseName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("WorkLocationID");
 
                     b.ToTable("AspNetUsers", (string)null);
                 });
@@ -603,27 +588,6 @@ namespace Tatilim.DataAccessLayer.Migrations
                     b.ToTable("Testimonials");
                 });
 
-            modelBuilder.Entity("Tatilim.EntityLayer.Concrete.WorkLocation", b =>
-                {
-                    b.Property<int>("WorkLocationID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("WorkLocationID"), 1L, 1);
-
-                    b.Property<string>("WorkLocationCity")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("WorkLocationName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("WorkLocationID");
-
-                    b.ToTable("WorkLocations");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<int>", b =>
                 {
                     b.HasOne("Tatilim.EntityLayer.Concrete.AppRole", null)
@@ -675,17 +639,6 @@ namespace Tatilim.DataAccessLayer.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("Tatilim.EntityLayer.Concrete.AppUser", b =>
-                {
-                    b.HasOne("Tatilim.EntityLayer.Concrete.WorkLocation", "WorkLocation")
-                        .WithMany("AppUsers")
-                        .HasForeignKey("WorkLocationID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("WorkLocation");
-                });
-
             modelBuilder.Entity("Tatilim.EntityLayer.Concrete.Contact", b =>
                 {
                     b.HasOne("Tatilim.EntityLayer.Concrete.MessageCategory", "MessageCategory")
@@ -700,11 +653,6 @@ namespace Tatilim.DataAccessLayer.Migrations
             modelBuilder.Entity("Tatilim.EntityLayer.Concrete.MessageCategory", b =>
                 {
                     b.Navigation("Contacts");
-                });
-
-            modelBuilder.Entity("Tatilim.EntityLayer.Concrete.WorkLocation", b =>
-                {
-                    b.Navigation("AppUsers");
                 });
 #pragma warning restore 612, 618
         }

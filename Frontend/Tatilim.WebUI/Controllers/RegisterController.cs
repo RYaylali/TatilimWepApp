@@ -32,7 +32,8 @@ namespace Tatilim.WebUI.Controllers
                 Name = model.Name,
                 Surname = model.Surname,
                 Email = model.Mail,
-                UserName = model.Username
+                UserName = model.Username,
+                WorkLocationID = 1
             };
             var result = await _userManager.CreateAsync(appUser,model.Password);//identity ile createasync metotu gelir metotun 2 overide var 
             if (result.Succeeded)

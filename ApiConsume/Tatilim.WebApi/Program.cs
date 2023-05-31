@@ -17,7 +17,8 @@ namespace Tatilim.WebApi
 			builder.Services.AddHttpClient();//istek atabilmek için gerekli
 
 
-			builder.Services.AddControllers();
+			builder.Services.AddControllers().AddNewtonsoftJson(opt=>
+            opt.SerializerSettings.ReferenceLoopHandling=Newtonsoft.Json.ReferenceLoopHandling.Ignore);
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
@@ -52,6 +53,15 @@ namespace Tatilim.WebApi
 
 			builder.Services.AddScoped<ISendMessageDal, EFSendMessageDal>();
 			builder.Services.AddScoped<ISendMessageService, SendMessageManager>();
+
+            builder.Services.AddScoped<IMessageCategoryDal, EFMessageCategoryDal>();
+            builder.Services.AddScoped<IMessageCategoryService, MessageCategoryManager>();
+
+			builder.Services.AddScoped<IWorkLocationDal, EFWorkLocationDal>();
+			builder.Services.AddScoped<IWorkLocationService, WorkLocationManager>();
+
+			builder.Services.AddScoped<IAppUserDal, EFAppUserDal>();
+			builder.Services.AddScoped<IAppUserService, AppUserManarger>();
 
 			builder.Services.AddAutoMapper(typeof(Program));
             builder.Services.AddCors(opt =>

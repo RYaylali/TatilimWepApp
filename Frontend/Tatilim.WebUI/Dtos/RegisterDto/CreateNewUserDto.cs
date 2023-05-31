@@ -17,5 +17,6 @@ namespace Tatilim.WebUI.Dtos.RegisterDto
         [Required(ErrorMessage = "Lütfen tekrar şifresini giriniz")]
         [Compare("Password",ErrorMessage ="Şifreler uyuşmuyor")]
         public string ConfirmPassword { get; set; }
-    }
+		public int WorkLocationID { get; set; }
+	}
 }
