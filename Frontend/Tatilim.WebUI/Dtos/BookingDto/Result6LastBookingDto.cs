@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Tatilim.EntityLayer.Concrete
+﻿namespace Tatilim.WebUI.Dtos.BookingDto
 {
-    public class Booking
+    public class Result6LastBookingDto
     {
         public int BookingID { get; set; }
         public string Name { get; set; }
@@ -19,7 +13,7 @@ namespace Tatilim.EntityLayer.Concrete
         public string SpecialRequest { get; set; }
         public string Description { get; set; }
         public string Status { get; set; }
-        public string City { get; set; }
-        public string Country { get; set; }
-    }
+		public string City { get; set; }
+		public string Country { get; set; }
+	}
 }

@@ -18,7 +18,12 @@ namespace Tatilim.BusinessLayer.Concrete
 			_appUserDal = appUserDal;
 		}
 
-		public void TDelete(AppUser entity)
+        public int TAppUserCount()
+        {
+            return _appUserDal.AppUserCount();
+        }
+
+        public void TDelete(AppUser entity)
 		{
 			throw new NotImplementedException();
 		}
@@ -46,6 +51,11 @@ namespace Tatilim.BusinessLayer.Concrete
 		public List<AppUser> TUserListWithWorkLocation()
 		{
 			return _appUserDal.UserListWithWorkLocation();
+		}
+
+		public List<AppUser> TUsersListWithWorkLocations()
+		{
+			return _appUserDal.UsersListWithWorkLocations();
 		}
 	}
 }

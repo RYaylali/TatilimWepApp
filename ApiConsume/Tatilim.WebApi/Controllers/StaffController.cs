@@ -48,6 +48,12 @@ namespace Tatilim.WebApi.Controllers
             var values = _staffService.TGetByID(id);
             return Ok(values);
         }
+        [HttpGet("Last4Staff")]
+        public IActionResult Last4Staff()
+        {
+            var values =_staffService.TLastFourStaff();
+            return Ok(values);
+        }
 
     }
 }

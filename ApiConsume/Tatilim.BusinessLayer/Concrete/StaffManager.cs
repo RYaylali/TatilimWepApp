@@ -33,9 +33,19 @@ namespace Tatilim.BusinessLayer.Concrete
             return _staffDal.GetList();
         }
 
+        public int TGetStaffCount()
+        {
+            return _staffDal.GetStaffCount();
+        }
+
         public void TInsert(Staff entity)
         {
            _staffDal.Insert(entity);
+        }
+
+        public List<Staff> TLastFourStaff()
+        {
+            return _staffDal.LastFourStaff();
         }
 
         public void TUpdate(Staff entity)

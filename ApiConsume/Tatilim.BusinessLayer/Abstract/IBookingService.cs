@@ -11,6 +11,8 @@ namespace Tatilim.BusinessLayer.Abstract
     {
         void TBookingStatusChangeApproved(Booking booking);
         void TBookingStatusChangeApproved(int id);
+        int TGetBookingCount();
+        List<Booking> TLast6Booking();
 
-	}
+    }
 }

@@ -9,5 +9,7 @@ namespace Tatilim.BusinessLayer.Abstract
 {
     public interface IStaffService:IGenericService<Staff>
     {
+        int TGetStaffCount();
+        List<Staff> TLastFourStaff();
     }
 }

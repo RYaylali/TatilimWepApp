@@ -32,5 +32,19 @@ namespace Tatilim.DataAccessLayer.EntityFramework
 			values.Status = "Onaylandı";
 			context.SaveChanges();
 		}
-	}
+
+        public int GetBookingCount()
+        {
+			var context = new Context();
+			var value = context.Bookings.Count();
+			return value;
+        }
+
+        public List<Booking> Last6Booking()
+        {
+            var context= new Context();
+			var values = context.Bookings.OrderByDescending(x => x.BookingID).Take(6).ToList();
+			return values;
+        }
+    }
 }

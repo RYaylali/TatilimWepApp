@@ -15,5 +15,19 @@ namespace Tatilim.DataAccessLayer.EntityFramework
         public EfStaffDal(Context context) : base(context)
         {
         }
+
+        public int GetStaffCount()
+        {
+            using var context = new Context();
+            var value = context.Staffs.Count();
+            return value;
+        }
+
+        public List<Staff> LastFourStaff()
+        {
+            using var context = new Context();
+            var values = context.Staffs.OrderByDescending(x=>x.StaffID).Take(4).ToList();//orderdescending sıralar ve take ile 4 tane veri çekeriz
+            return values;
+        }
     }
 }
