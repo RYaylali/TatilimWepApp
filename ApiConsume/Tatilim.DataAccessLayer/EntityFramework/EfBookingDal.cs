@@ -33,7 +33,31 @@ namespace Tatilim.DataAccessLayer.EntityFramework
 			context.SaveChanges();
 		}
 
-        public int GetBookingCount()
+		public void BookingStatusChangeApproved3(int id)
+		{
+			var context = new Context();
+			var values = context.Bookings.Find(id);
+			values.Status = "Onaylandı";
+			context.SaveChanges();
+		}
+
+		public void BookingStatusChangeCancel(int id)
+		{
+			var context = new Context();
+			var values = context.Bookings.Find(id);
+			values.Status = "İptal Edildi";
+			context.SaveChanges();
+		}
+
+		public void BookingStatusChangeWaitingForApproval(int id)
+		{
+			var context = new Context();
+			var values = context.Bookings.Find(id);
+			values.Status = "Onay Bekleniyor";
+			context.SaveChanges();
+		}
+
+		public int GetBookingCount()
         {
 			var context = new Context();
 			var value = context.Bookings.Count();

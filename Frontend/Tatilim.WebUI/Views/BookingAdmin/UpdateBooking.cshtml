@@ -1,0 +1,82 @@
+﻿@model UpdateBookingDto
+@{
+    ViewData["Title"] = "UpdateBookin";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<h1>Rezervasyon Güncelle</h1>
+
+
+
+<form method="post">
+    <input type="hidden" asp-for="BookingID" />
+    <label>Misafir Adı Soyadı</label>
+    <input type="text" asp-for="Name" class="form-control" />
+    <span asp-validation-for="Name" class="text-danger"></span>
+
+    <br />
+
+    <label>Misafir Mail Adı</label>
+    <input type="email" asp-for="Mail" class="form-control" />
+    <span asp-validation-for="Mail" class="text-danger"></span>
+
+    <br />
+
+    <label>Giriş Tarihi</label>
+    <input type="date" asp-for="Chaeckin" class="form-control" />
+    <span asp-validation-for="Chaeckin" class="text-danger"></span>
+
+    <br />
+
+    <label>Çıkış Tarihi</label>
+    <input type="date" asp-for="ChaeckOut" class="form-control" />
+    <span asp-validation-for="ChaeckOut" class="text-danger"></span>
+
+    <br />
+
+    <label>Yetişkin Sayısı</label>
+    <input type="number" asp-for="AdultCount" class="form-control" />
+    <span asp-validation-for="AdultCount" class="text-danger"></span>
+
+    <br />
+
+    <label>Çocuk Sayısı</label>
+    <input type="number" asp-for="ChildCount" class="form-control" />
+    <span asp-validation-for="ChildCount" class="text-danger"></span>
+
+    <br />
+    <label>Oda Sayısı</label>
+    <input type="number" asp-for="RoomCount" class="form-control" />
+    <span asp-validation-for="RoomCount" class="text-danger"></span>
+
+    <br />
+
+    <label>Şehir</label>
+    <input type="text" asp-for="City" class="form-control" />
+    <span asp-validation-for="City" class="text-danger"></span>
+
+    <br />
+    <label>Ülke</label>
+    <input type="text" asp-for="Country" class="form-control" />
+    <span asp-validation-for="Country" class="text-danger"></span>
+
+    <br />
+
+    <label>Durum</label>
+    <input type="text" asp-for="Status" class="form-control" />
+    <span asp-validation-for="Status" class="text-danger"></span>
+
+    <br />
+
+    <label>Özel İstekler</label>
+    <textarea rows="5" asp-for="SpecialRequest" class="form-control" ></textarea>
+    <br />
+
+
+    <label>Açıklama</label>
+    <textarea rows="5" asp-for="Description" class="form-control"></textarea>
+    <br />
+
+    <button class="btn btn-success">Rezervasyon Güncelle</button>
+</form>
+

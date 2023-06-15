@@ -9,7 +9,7 @@ using Tatilim.EntityLayer.Concrete;
 
 namespace Tatilim.BusinessLayer.Concrete
 {
-    public class BookingManager : IBookingService
+	public class BookingManager : IBookingService
     {
         private readonly IBookingDal _bookingDal;
 
@@ -17,6 +17,11 @@ namespace Tatilim.BusinessLayer.Concrete
         {
             _bookingDal = bookingDal;
         }
+
+		public void TBookingStatusChangeWaitingForApproval(int id)
+		{
+			_bookingDal.BookingStatusChangeWaitingForApproval(id);
+		}
 
 		public void TBookingStatusChangeApproved(Booking booking)
 		{
@@ -26,6 +31,16 @@ namespace Tatilim.BusinessLayer.Concrete
 		public void TBookingStatusChangeApproved(int id)
 		{
 			_bookingDal.BookingStatusChangeApproved(id);
+		}
+
+		public void TBookingStatusChangeApproved3(int id)
+		{
+            _bookingDal.BookingStatusChangeApproved3(id);
+		}
+
+		public void TBookingStatusChangeCancel(int id)
+		{ 
+            _bookingDal.BookingStatusChangeCancel(id);
 		}
 
 		public void TDelete(Booking entity)

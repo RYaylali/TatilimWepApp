@@ -13,6 +13,8 @@ namespace Tatilim.BusinessLayer.Abstract
         void TBookingStatusChangeApproved(int id);
         int TGetBookingCount();
         List<Booking> TLast6Booking();
-
-    }
+        void TBookingStatusChangeApproved3(int id);
+        void TBookingStatusChangeCancel(int id);
+        void TBookingStatusChangeWaitingForApproval(int id);
+	}
 }

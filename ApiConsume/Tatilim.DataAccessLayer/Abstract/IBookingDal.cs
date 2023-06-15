@@ -13,5 +13,8 @@ namespace Tatilim.DataAccessLayer.Abstract
         void BookingStatusChangeApproved(int id);
         int GetBookingCount();
         List<Booking> Last6Booking();
+        void BookingStatusChangeApproved3(int id);
+        void BookingStatusChangeCancel(int id);
+        void BookingStatusChangeWaitingForApproval(int id);
     }
 }

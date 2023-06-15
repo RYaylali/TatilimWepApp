@@ -64,5 +64,23 @@ namespace Tatilim.WebApi.Controllers
 			var values=_bookingService.TLast6Booking();
 			return Ok(values);
 		}
+		[HttpGet("BookingAproved")]
+		public IActionResult BookingAproved(int id)
+		{
+			_bookingService.TBookingStatusChangeApproved3(id);
+			return Ok();
+		}
+		[HttpGet("BookingCancel")]
+		public IActionResult BookingCancel(int id)
+		{
+			_bookingService.TBookingStatusChangeCancel(id);
+			return Ok();
+		}
+		[HttpGet("BookingWaitingForApproval")]
+		public IActionResult BookingWaitingForApproval(int id)
+		{
+			_bookingService.TBookingStatusChangeWaitingForApproval(id);
+			return Ok();
+		}
 	}
 }

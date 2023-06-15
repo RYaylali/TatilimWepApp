@@ -37,12 +37,13 @@
 								<td>@(((DateTime)item.Chaeckin).ToString("dd-MM-yyyy"))</td>
 								<td>@(((DateTime)item.ChaeckOut).ToString("dd-MM-yyyy")) </td>
 								<td>@item.Status</td>
-								<td><a href="/BookingAdmin/ApprovedReservation/@item.BookingID" class="btn btn-outline-primary">Onayla</a></td>
-								<td><a href="" class="btn btn-outline-danger">İptal Et</a></td>
-								<td><a href="" class="btn btn-outline-warning">Beklet</a></td>
-								<td><a href="" class="btn btn-outline-İnfo">Detaylar</a></td>
-								<td><a href="" class="btn btn-outline-dark">Güncelle</a></td>
+								<td><a href="/BookingAdmin/ApprovedReservation2/@item.BookingID" class="btn btn-outline-primary">Onayla</a></td>
+								<td><a href="/BookingAdmin/CancelReservation/@item.BookingID" class="btn btn-outline-danger">İptal Et</a></td>
+								<td><a href="/BookingAdmin/WaitingForApprovalReservation/@item.BookingID" class="btn btn-outline-warning">Beklet</a></td>
+								<td><a href="/BookingAdmin/UpdateBooking/@item.BookingID" class="btn btn-outline-İnfo">Detaylar</a></td>
+								<td><a href="/BookingAdmin/UpdateBooking/@item.BookingID" class="btn btn-outline-dark">Güncelle</a></td>
 							</tr>
+							
 						}
 
 					</tbody>
