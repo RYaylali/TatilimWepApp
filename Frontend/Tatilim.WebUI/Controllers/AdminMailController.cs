@@ -31,7 +31,7 @@ namespace Tatilim.WebUI.Controllers
 			//manager packet olarak indirdiğimiz mailkit ile bağlantı kurmamızı sağlar
 			SmtpClient client = new SmtpClient();
 			client.Connect("smtp.gmail.com", 587, false);//bağlantı maili, portu ve token üretme durumunu belirler
-			client.Authenticate("1test12test212@gmail.com", "xhfyweipnsclvxuu");//Maili gönderecek adresden alınan key ve adresin kendisini yazmam gerek ve çalışması 2 adımlı doğrulamayı açmalısın
+			client.Authenticate("1test12test212@gmail.com", "hmzsafqssjxcmkgi");//Maili gönderecek adresden alınan key ve adresin kendisini yazmam gerek ve çalışması 2 adımlı doğrulamayı açmalısın
 			client.Send(mimeMessage);
 			client.Disconnect(true); 
 			return View();
